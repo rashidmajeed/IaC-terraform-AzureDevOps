@@ -20,7 +20,7 @@ stages:
 ## Publish Artifacts pipeline code in addition to Build and Push          
     - bash: echo Contents in System Default Working Directory; ls -R $(System.DefaultWorkingDirectory)        
     - bash: echo Before copying Contents in Build Artifact Directory; ls -R $(Build.ArtifactStagingDirectory)        
-    # Task-2: Copy files (Copy files from a source folder to target folder)
+    # Task-1: Copy files (Copy files from a source folder to target folder)
     # Source Directory: $(System.DefaultWorkingDirectory)/terraform-manifests
     # Target Directory: $(Build.ArtifactStagingDirectory)
     - task: CopyFiles@2
@@ -31,7 +31,7 @@ stages:
         OverWrite: true
     # List files from Build Artifact Staging Directory - After Copy
     - bash: echo After copying to Build Artifact Directory; ls -R $(Build.ArtifactStagingDirectory)  
-    # Task-3: Publish build artifacts (Publish build to Azure Pipelines)           
+    # Task-2: Publish build artifacts (Publish build to Azure Pipelines)           
     - task: PublishBuildArtifacts@1
       inputs:
         PathtoPublish: '$(Build.ArtifactStagingDirectory)'
