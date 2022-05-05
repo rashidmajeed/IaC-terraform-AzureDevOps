@@ -5,7 +5,7 @@ trigger:
 # Stage-1:
   # Task-1: Copy terraform-manifests files to Build Artifact Directory
   # Task-2: Publish build articats to Azure Pipelines
-# Pipeline Hierarchial Flow: Stages -> Stage -> Jobs -> Job -> Steps -> Task1, Task2, Task3  
+# Pipeline Hierarchial Flow: Stages -> Stage -> Jobs -> Job -> Steps -> Task1, Task2 
 
 stages:
 # Build Stage 
